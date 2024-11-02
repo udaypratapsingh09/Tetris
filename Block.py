@@ -121,17 +121,17 @@ colors = ("cyan","yellow","purple","orange","blue","green","red")
 blocks = list(zip(shapes,colors))
 b = blocks.copy()
 shuffle(b)
-next = b[0]
+nxt = b[0]
 def get_blocks():
-    global b,next,blocks
-    current = next
+    global b,nxt,blocks
+    current = nxt
     if len(b)==1:
         b = blocks.copy()
         shuffle(b)
-        next = b[0]
+        nxt = b[0]
     else:
-        next = b[1]
+        nxt = b[1]
     b.pop(0)
     block = Block(start_row,start_col,current[0],current[1])
-    next_block = Block(start_row,start_col,next[0],next[1])
+    next_block = Block(start_row,start_col,nxt[0],nxt[1])
     return (block,next_block)
